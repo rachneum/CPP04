@@ -6,11 +6,11 @@ Cat::Cat() : brain(new Brain())
     std::cout << "Cat constructor called." << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other)
+Cat::Cat(const Cat& other) : Animal(other), brain(new Brain(*other.brain))
 {
     std::cout << "Cat copy constructor called." << std::endl;
-    brain = new Brain(*other.brain);
 }
+
 
 Cat& Cat::operator=(const Cat& other)
 {

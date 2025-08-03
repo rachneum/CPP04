@@ -1,0 +1,3 @@
+Dans ma class Brain: std::string ideas[100];
+-> Brain contient un tableau de 100 chaînes de caractères (std::string) qui représentent des idées.
+Chaque objet Brain peut donc stocker jusqu’à 100 idées différentes.

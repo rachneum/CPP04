@@ -1,37 +1,37 @@
+#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
 int main()
 {
-    const int size = 4;
-    Animal* animals[size];
+    /*Création et suppression simples pour vérifier constructeurs/destructeurs*/
+    const Animal* dog = new Dog();
+    const Animal* cat = new Cat();
 
-    std::cout << "\n🧠 Creating Animals...\n" << std::endl;
+    dog->makeSound();
+    cat->makeSound();
+    delete dog;
+    delete cat;
 
-    for (int i = 0; i < size; ++i) {
-        animals[i] = (i < size / 2) ? (Animal*)new Dog() : (Animal*)new Cat();
+    /*Tableau d'animaux avec moitié Dog, moitié Cat*/
+    const int   size = 4;
+    Animal*     animals[size];
+
+    for (int i = 0; i < size; ++i)
+    {
+        if (i < size / 2)//Si i < que la moitié de la taille (dans ce cas si i == O ou 1)
+            animals[i] = new Dog();
+        else
+            animals[i] = new Cat();
     }
 
-    std::cout << "\n💬 Sounds:\n" << std::endl;
-
+    /*Faire faire un son à tous les animaux*/
     for (int i = 0; i < size; ++i)
         animals[i]->makeSound();
 
-    std::cout << "\n🧽 Deleting Animals...\n" << std::endl;
-
+    /*Nettoyage*/
     for (int i = 0; i < size; ++i)
         delete animals[i];
 
-    std::cout << "\n🧪 Deep Copy Test:\n" << std::endl;
-
-    Dog basic;
-    basic.getBrain()->setIdea(0, "Chase the cat!");
-
-    Dog copy = basic;
-    copy.getBrain()->setIdea(0, "Eat kibble.");
-
-    std::cout << "Original Dog Brain[0]: " << basic.getBrain()->getIdea(0) << std::endl;
-    std::cout << "Copied Dog Brain[0]:   " << copy.getBrain()->getIdea(0) << std::endl;
-
-    return 0;
+    return (0);
 }

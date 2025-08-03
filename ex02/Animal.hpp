@@ -15,7 +15,7 @@ class Animal
         Animal& operator=(const Animal& other);
         virtual ~Animal();
 
-        virtual void    makeSound() const = 0;//Méthode pure virtuelle.
+        virtual void    makeSound() const = 0;//Méthode virtuelle pure.
         std::string     getType() const;
 };
 

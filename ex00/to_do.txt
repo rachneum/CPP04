@@ -1,0 +1,27 @@
+virtual( active le polymorphisme)
+-> Quand je mets virtual, le compilateur crée une table cachée (appelée vtable = virtual table).
+Chaque objet (Dog, Cat…) a un pointeur vers cette table.
+La table dit : “Pour makeSound(), va à cette adresse → Dog::makeSound()”
+Quand tu appelles a->makeSound(), il cherche dans cette table, pas dans la classe Animal.
+
+Donc en gros virtual veut dire -> je peux être remplacée par une autre version dans une classe qui hérite de moi.
+
+Polymorphisme = même interface (ex: Animal*), mais comportement différent (ex: Dog ou Cat).
+____________________________
+
+Dans mon main j'utilise new parce que le polymorphisme (Animal* vers Dog) ne fonctionne correctement que avec des pointeurs ou des références, pas avec des objets copiés.
+
+✔️ new Dog() crée l’objet sur le heap.
+❌ Animal j = Dog(); copie juste la partie Animal (object slicing).
+❌ const Animal* j = Dog(); pointe vers un objet temporaire détruit (dangling pointer).
+________
+ATTENTION override fait parti de la bibli ++11 donc je ne peux pas m'en servir ici.
+
+override = une sécurité qui va checker la signature de ma fonction (si ma nouvelle fonction est pareil que ma virtual).
+________
+Différence entre les deux:
+-> virtual = je PERMETS que la fonction soit remplacée.
+-> override = je CONFIRME que je suis en train de la remplacer.
+
+____________________________
+Je n'utilise pas de virtual dans WrongAnimal et WrongCat afin de montrer que ca ne marche pas sans!

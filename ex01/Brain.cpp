@@ -15,7 +15,8 @@ Brain::Brain(const Brain& other)
 Brain& Brain::operator=(const Brain& other)
 {
     std::cout << "Brain assignment operator called." << std::endl;
-    if (this != &other) {
+    if (this != &other)
+    {
         for (int i = 0; i < 100; ++i)
             ideas[i] = other.ideas[i];
     }
@@ -34,6 +35,6 @@ void Brain::setIdea(int index, const std::string& idea)
 }
 
 std::string Brain::getIdea(int index) const
-{
+{//Récupère l’idée stockée dans ideas à la position index.
     return ((index >= 0 && index < 100) ? ideas[index] : "");
-}
+}//Si l'index n'existe pas renvoi "".

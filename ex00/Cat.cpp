@@ -15,7 +15,7 @@ Cat& Cat::operator=(const Cat& other)
 {
     std::cout << "Cat copy assignment operator called." << std::endl;
     if (this != &other)
-        Animal::operator=(other);
+        Animal::operator=(other);//Je demande à ma class Animal de fire son propre opérateur d'affectation.
     return (*this);
 }
 

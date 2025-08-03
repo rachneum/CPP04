@@ -1,0 +1,5 @@
+Animal devient une classe abstraite car elle contient une fonction virtuelle pure.
+Le = 0 indique que cette fonction n'a pas d'implémentation là, les classes dérivées doivent l'implémenter.
+Classe abstraite->
+Je ne peux plus créer d’objets Animal directs.
+Je dois créer uniquement des Dog, Cat, etc., qui héritent de Animal et implémentent makeSound().

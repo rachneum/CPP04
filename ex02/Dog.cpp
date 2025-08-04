@@ -9,7 +9,7 @@ Dog::Dog() : brain(new Brain())
 Dog::Dog(const Dog& other) : Animal(other)
 {
     std::cout << "Dog copy constructor called." << std::endl;
-    brain = new Brain(*other.brain);//Deep copy.
+    brain = new Brain(*other.brain);
 }
 
 Dog& Dog::operator=(const Dog& other)

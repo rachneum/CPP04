@@ -17,6 +17,17 @@ int main()
 
     delete j;
     delete i;
+    std::cout << std::endl;
+    std::cout << "**** SET and GET tests ****" << std::endl;
+    Cat c;
+    Dog d;
+
+    c.getBrain()->setIdea(9, "Manger du thon");
+    d.getBrain()->setIdea(0, "Jouer à la balle");
+
+    std::cout << "Cat idea: " << c.getBrain()->getIdea(9) << std::endl;
+    std::cout << "Dog idea: " << d.getBrain()->getIdea(0) << std::endl;
+
 
     return 0;
 }

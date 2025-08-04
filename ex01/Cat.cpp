@@ -17,7 +17,7 @@ Cat& Cat::operator=(const Cat& other)
     if (this != &other)
     {
         Animal::operator=(other);
-        delete (brain);
+        delete (brain);//Ne pas oublier de bien supprimer l'ancien brain avant de le remplacer par une copie de other.brain!
         brain = new Brain(*other.brain);
     }
     return (*this);

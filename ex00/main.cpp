@@ -15,7 +15,7 @@ int main()
 
     i->makeSound();//output "Meow!".
     j->makeSound();//output "Woof!".
-    meta->makeSound(); //generic sound.
+    meta->makeSound();//generic sound.
 
     delete meta;
     delete j;
